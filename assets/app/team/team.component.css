@@ -1,0 +1,39 @@
+.team-section {
+  margin-top: 0px;
+  padding: 15px;
+}
+
+.team-image  {
+  background-color: rgba(72, 207, 173, 0.68);
+  /*margin: 0 auto;*/
+}
+
+.team-img {
+  display: block;
+  width: auto;
+  height: auto;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 50%;
+}
+
+.team-des {
+  background-color: white;
+}
+
+.team-name {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 25px 5px 10px;
+  color: #888;
+  text-align: center;
+}
+
+.team-name-des {
+  padding-top: 0px;
+  padding-bottom: 25px;
+  text-align: center;
+}
