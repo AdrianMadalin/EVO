@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 
 import {ArhitectureComponent} from "./architecture/arhitecture.component";
 import {TelekomComponent} from "./telekom/telekom.component";
+import {PortofolioRouting} from "./portofolio.routing";
 
 @NgModule({
     declarations: [
@@ -10,7 +11,8 @@ import {TelekomComponent} from "./telekom/telekom.component";
         TelekomComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        PortofolioRouting
     ]
 })
 

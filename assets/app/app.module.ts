@@ -13,10 +13,11 @@ import {routing} from './app.routing.component';
 import {DropdownDirective} from "./shared/dropdown.directive";
 import {PortofolioModule} from "./portofolio/portofolio.module";
 import {ContactService} from "./contact/contact.service";
-import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { AgmCoreModule } from '@agm/core';
 import { TeamComponent } from './team/team.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServicesComponent } from './services/services.component';
+import { SmoothScrollToDirective, SmoothScrollDirective } from "ng2-smooth-scroll";
 
 @NgModule({
     declarations: [
@@ -28,11 +29,10 @@ import { FooterComponent } from './footer/footer.component';
         UploadComponent,
         PageNotFoundComponent,
         TeamComponent,
-        FileSelectDirective,
-        FileDropDirective,
         FooterComponent,
-        FileSelectDirective,
-        PageNotFoundComponent
+        ServicesComponent,
+        SmoothScrollToDirective,
+        SmoothScrollDirective
     ],
     imports: [
         BrowserModule,

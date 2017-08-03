@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'App Evo';
-  data = [1,2,3,4];
-  bind = '';
+
 }

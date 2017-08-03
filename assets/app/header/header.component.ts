@@ -25,4 +25,8 @@ ngOnInit() {
       }
       window.location.hash = location;
   };
+
+  scrollTo() {
+    this.router.navigate(['/']);
+  }
 }
