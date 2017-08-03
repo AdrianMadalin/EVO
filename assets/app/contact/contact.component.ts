@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ContactService } from './contact.service';
 
-@Component ({
+@Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
@@ -15,20 +15,21 @@ export class ContactComponent implements OnInit {
   lng: number = 26.053845;
   zoom: number = 14;
   label: string = 'EVO';
-  title: string ='Locatie EVO DESIGN CONSTRUCT';
+  title: string = 'Locatie EVO DESIGN CONSTRUCT';
+  sendEmail = false;
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      'name' : new FormControl(null, Validators.required),
-      'email' : new FormControl(null, [Validators.required, Validators.email]),
-      'message' : new FormControl(null, [Validators.required]),
-      'subject' : new FormControl(null)
+      'name': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'message': new FormControl(null, [Validators.required]),
+      'subject': new FormControl(null)
     });
   };
 
-  hovered(event: EventEmitter<MouseEvent>){
+  hovered(event: EventEmitter<MouseEvent>) {
     console.log('acoperit')
     console.log(event);
   }
@@ -43,9 +44,9 @@ export class ContactComponent implements OnInit {
 
     this.contactService.sendEmail(formData)
       .subscribe(
-        data => console.log(data),
-        error => console.log(error));
-
+      data => console.log(data),
+      error => console.log(error));
     this.form.reset();
+    this.sendEmail = true;
   };
 }
