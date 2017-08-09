@@ -1,33 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { FileUploader } from 'ng2-file-upload';
+import { Component, ElementRef } from '@angular/core';
+import { FileUploadService } from './file-upload.service';
 
-const URL = 'http://localhost:3000/portofoliu/upload/evo';
-
-@Component ({
+@Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  styleUrls: ['./upload.component.css'],
+  providers: [FileUploadService]
 })
 
 export class UploadComponent {
 
-//uploadImageForm: FormGroup;
+  constructor(private fileUploader: FileUploadService,
+    private element: ElementRef) { }
 
-  ngOnInit() {
-//    this.uploadImageForm = new FormGroup({
-//      description: new FormControl(null, Validators.required),
-//      image: new FormControl(null)
-//    })
-  };
-
-//  onSubmit() {
-//    console.log(this.uploadImageForm);
-//  }
-
-
-  onSubmit() {
-
+  uploadImage(): void {
+    let files = this.element.nativeElement.querySelector('#image').files;
+    let formData = new FormData();
+    let file = files[0];
+    formData.append('image', file, file.name);
+    this.fileUploader.uploadImage(formData)
+      .subscribe((res) => {
+        console.log(res);
+        console.log('Image uploaded');
+      })
   }
-
 }
